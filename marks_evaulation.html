@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Evaluation</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function evaluateMarks() {
+            const marks = parseInt(document.getElementById('marksInput').value);
+            let resultMessage = '';
+
+            if (marks >= 35 && marks < 100) {
+                resultMessage = "You Have Passed The Exam";
+                if (marks >= 75) {
+                    resultMessage += "<br>Congratulations on scoring A class result";
+                }
+            } else if (marks >= 100 || marks < 0) {
+                resultMessage = "You are entering wrong individuals";
+            } else {
+                resultMessage = "You Have Failed The Exam<br>Better Luck Next Time";
+            }
+
+            document.getElementById('result').innerHTML = resultMessage;
+        }
+    </script>
+</head>
+<body>
+    <h1>Marks Evaluation</h1>
+    <label for="marksInput">Enter Your Marks:</label>
+    <input type="number" id="marksInput" required>
+    <button onclick="evaluateMarks()">Submit</button>
+    <div id="result"></div>
+    <p>End Of Program</p>
+</body>
+</html>
